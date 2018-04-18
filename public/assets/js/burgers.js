@@ -7,4 +7,15 @@ $(function () {
             location.reload();
         });
     });
+
+    $("#burger-form").submit(function(event) {
+        event.preventDefault();
+        var $form = $(this);
+        var name = $form.find("input[name='name']").val();
+        var burger = {"name": name};
+        console.log(burger);
+        $.post("/api/burgers", burger).then(function(data) {
+            location.reload();
+        });
+    });
 });

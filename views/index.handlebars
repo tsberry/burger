@@ -8,3 +8,8 @@
 <ul>
     {{#each burgers}} {{#if devoured}} {{> burgerblock devoured=true}} {{/if}} {{/each}}
 </ul>
+
+<form id="burger-form">
+    <input type="text" name="name">
+    <input class="btn btn-default btn-danger" type="submit" name="submit" value="Submit your burger">
+</form>
