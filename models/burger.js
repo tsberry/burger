@@ -15,8 +15,8 @@ var burger = {
         })
     },
     // Devours the burger with the given name
-    updateOne: function(name, callback) {
-        orm.updateOne("burgers", name, function(data) {
+    updateOne: function(id, callback) {
+        orm.updateOne("burgers", id, function(data) {
             callback(data);
         })
     }

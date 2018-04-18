@@ -17,10 +17,10 @@ var orm = {
         });
     },
     // Devour the given burger from the given table
-    updateOne: function(table, name, callback) {
-        connection.query("UPDATE ?? SET ? WHERE burger_name = ?", [table, {devoured: true}, name], function(error, results, fields) {
+    updateOne: function(table, id, callback) {
+        connection.query("UPDATE ?? SET ? WHERE id = ?", [table, {devoured: true}, id], function(error, results, fields) {
             if(error) throw error;
-            callback(name + " has been devoured.");
+            callback(results);
         })
     }
 };

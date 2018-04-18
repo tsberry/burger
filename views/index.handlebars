@@ -1,14 +1,10 @@
 <h1>Burgers Not Yet Eaten</h1>
 <ul>
-    {{#each burgers}} {{#unless devoured}}
-    <li>{{burger_name}}</li>
-    {{/unless}} {{/each}}
+    {{#each burgers}} {{#unless devoured}} {{> burgerblock devoured=false}} {{/unless}} {{/each}}
 </ul>
 
 <h1>Burgers Already Eaten</h1>
 
 <ul>
-    {{#each burgers}} {{#if devoured}}
-    <li>{{burger_name}}</li>
-    {{/if}} {{/each}}
+    {{#each burgers}} {{#if devoured}} {{> burgerblock devoured=true}} {{/if}} {{/each}}
 </ul>

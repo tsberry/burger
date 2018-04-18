@@ -33,7 +33,7 @@ router.post("/api/burgers", function (req, res) {
 
 // The put route devours a burger
 router.put("/api/burgers", function (req, res) {
-    burger.updateOne(req.body.name, function (data) {
+    burger.updateOne(req.body.id, function (data) {
         res.json({
             "message": "Burger devoured",
             "data": data
