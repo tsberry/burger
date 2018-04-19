@@ -9,16 +9,16 @@ var orm = {
             callback(results);
         });
     },
-    // Insert a new burger into the given table
-    insertOne: function(table, name, callback) {
-        connection.query("INSERT INTO ?? SET ?", [table, {burger_name: name, devoured: false}], function(error, results, fields) {
+    // Insert a new item into the given table
+    insertOne: function(table, properties, callback) {
+        connection.query("INSERT INTO ?? SET ?", [table, properties], function(error, results, fields) {
             if(error) throw error;
-            callback("Added " + name + " to the " + table + " table.");
+            callback(results);
         });
     },
-    // Devour the given burger from the given table
-    updateOne: function(table, id, callback) {
-        connection.query("UPDATE ?? SET ? WHERE id = ?", [table, {devoured: true}, id], function(error, results, fields) {
+    // Updates the given properties at the items satisfying the locator in the given table
+    updateOne: function(table, properties, locator, callback) {
+        connection.query("UPDATE ?? SET ? WHERE ?", [table, properties, locator], function(error, results, fields) {
             if(error) throw error;
             callback(results);
         })
