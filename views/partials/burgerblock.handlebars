@@ -1,8 +1,6 @@
 <li class="list-group-item">
-			{{burger_name}} {{#unless devoured}}
-			{{!-- <button class="burger-button btn btn-default btn-primary" data-id="{{id}}">
-				Eat Burger
-			</button> --}}
-			<span class="burger-button badge" data-id="{{id}}">Eat Me!</span>
-			{{/unless}}
+    {{burger_name}} {{#unless devoured}}
+    <span class="burger-button badge" data-id="{{id}}">Eat Me!</span>
+    {{/unless}}
+    <span class="delete-button badge" data-id="{{id}}">Delete!</span>
 </li>

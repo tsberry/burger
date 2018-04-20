@@ -22,6 +22,12 @@ var orm = {
             if(error) throw error;
             callback(results);
         })
+    },
+    delete: function(table, locator, callback) {
+        connection.query("DELETE FROM ?? WHERE ?", [table, locator], function(error, results, fields) {
+            if(error) throw error;
+            callback(results);
+        });
     }
 };
 

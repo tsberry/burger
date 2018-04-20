@@ -32,12 +32,17 @@ router.post("/api/burgers", function (req, res) {
 });
 
 // The put route devours a burger
-router.put("/api/burgers", function (req, res) {
-    burger.updateOne(req.body.id, function (data) {
-        res.json({
-            "message": "Burger devoured",
-            "data": data
-        })
+router.put("/api/burgers/:id", function (req, res) {
+    burger.updateOne(req.params.id, function (data) {
+        if(data.affectedRows === 0) return res.status(500).end();
+        res.end();
+    });
+});
+
+router.delete("/api/burgers/:id", function (req, res) {
+    burger.delete(req.params.id, function (data) {
+        if(data.affectedRows === 0) return res.status(500).end();
+        res.end();
     });
 });
 
