@@ -1,7 +1,12 @@
 <div class="container">
     <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Burger Eater</h1>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-4">
-            <h1>Burgers Not Yet Eaten</h1>
+            <h2>Burgers Not Yet Eaten</h2>
             <ul class="list-group">
                 {{#each burgers}} {{#unless devoured}} {{> burgerblock devoured=false}} {{/unless}} {{/each}}
             </ul>
@@ -18,7 +23,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <h1>Burgers Already Eaten</h1>
+            <h2>Burgers Already Eaten</h2>
 
             <ul class="list-group">
                 {{#each burgers}} {{#if devoured}} {{> burgerblock devoured=true}} {{/if}} {{/each}}
